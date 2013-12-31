@@ -1,0 +1,35 @@
+{{!< default}}
+
+<header class="site-head">
+  <h1>{{@blog.title}}</h1>
+  <p class="site-description">
+    {{@blog.description}}
+  </p>
+</header>
+
+<ul class="posts" role="main">
+  {{#foreach posts}}
+    <li>
+      <article class="{{post_class}}">
+        <div class="post-meta">
+          <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM DD, YY"}}</time>
+          <h2><a href="{{url}}">{{{title}}}</a></h2>
+          <span class="tags">{{tags prefix="Posted in " separator=", "}}.</span>
+        </div>
+
+        <p class="excerpt">
+          {{excerpt}}&hellip;
+
+        </p>
+
+        <div class="terrible-more-wrapper">
+          <a href="{{url}}" class="more">Read post</a>
+        </div>
+
+      </article>
+    </li>
+  {{/foreach}}
+</ul>
+
+{{pagination}}
+

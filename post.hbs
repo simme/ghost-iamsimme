@@ -1,0 +1,26 @@
+{{!< default}}
+
+<header class="site-head">
+  <a href="/" class="title">{{@blog.title}}</a>
+  <p class="site-description">
+    {{@blog.description}}
+  </p>
+</header>
+
+<article class="{{post_class}}">
+
+  {{#post}}
+
+    <div class="post-meta">
+      <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM DD, YY"}}</time>
+      <h1>{{{title}}}</h1>
+      <span class="tags">{{tags prefix="Posted in " separator=", "}}.</span>
+    </div>
+
+    <div class="content">{{content}}</div>
+
+  {{/post}}
+</article>
+
+<script src="/assets/js/prism.js"></script>
+
